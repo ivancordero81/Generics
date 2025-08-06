@@ -1,8 +1,8 @@
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
-public class Catalogo <T extends Producto > {
+public class GenericCatalogo<T extends Producto > {
     private List<T> productos = new ArrayList<>();
 
     void agregar (T producto){
@@ -21,6 +21,10 @@ public class Catalogo <T extends Producto > {
         for (T producto : productos)
         System.out.println(producto);
         }
+
+    void ordenarPorCriterio (Comparator<T> criterio){
+        productos.sort(criterio);
+    }
 
 
 }
